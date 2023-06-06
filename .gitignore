@@ -1,0 +1,14 @@
+.vscode
+.DS_Store
+.env*
+node_modules
+dist/
+site/_includes/**/*.js
+site/_includes/**/*.css
+site/_includes/**/*.map
+site/img/*
+!site/img/.keep
+src/uswds-img/*
+!src/uswds-img/.keep
+src/fonts/*
+!src/fonts/.keep

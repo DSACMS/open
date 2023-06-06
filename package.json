@@ -1,0 +1,84 @@
+{
+  "name": "dsac-open-website",
+  "version": "0.1.0",
+  "author": "CMS Open Source <opensource@cms.hhs.gov>",
+  "license": "CC0-1.0",
+  "description": "",
+  "scripts": {
+    "format": "prettier --write **/*.{js,css} !dist",
+    "start": "NODE_ENV=development run-p -l start:*",
+    "start:eleventy": "eleventy --serve",
+    "start:rollup": "rollup --config rollup.config.mjs -w",
+    "start:postcss": "postcss ./src/css -d ./site/_includes/css -w",
+    "build": "NODE_ENV=production run-s -l build:*",
+    "build:clean": "rm -rf dist",
+    "build:rollup": "rollup --config rollup.config.mjs --bundleConfigAsCjs",
+    "build:postcss": "postcss ./src/css -d ./site/_includes/css",
+    "build:eleventy": "eleventy",
+    "deploy": "echo 'NOT IMPLEMENTED'",
+    "lint": "eslint ./src/js/**/*.js",
+    "style": "prettier --check src/**/**.{js,css}"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-fetch": "^4.0.0",
+    "@11ty/eleventy-img": "^3.1.0",
+    "@babel/core": "^7.21.8",
+    "@babel/eslint-parser": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@uswds/uswds": "^3.4.1",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "core-js": "^3.30.2",
+    "cssnano": "^6.0.1",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.41.0",
+    "eslint-plugin-import": "^2.27.5",
+    "markdown-it": "^13.0.1",
+    "markdown-it-link-attributes": "^4.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "prettier": "^2.8.8",
+    "prettier-eslint": "^15.0.1",
+    "rollup": "^3.23.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended"
+    ],
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "node": true
+    },
+    "plugins": [
+      "import"
+    ],
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module",
+      "requireConfigFile": false,
+      "babelOptions": {
+        "presets": [
+          "@babel/preset-env"
+        ]
+      }
+    }
+  },
+  "prettier": {
+    "endOfLine": "lf",
+    "semi": false,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "trailingComma": "es5"
+  }
+}
