@@ -8,7 +8,7 @@ const baseurl = production ? "" : ""
 module.exports = {
   name: "Digital Service at CMS",
   title: "Digital Service at CMS",
-  description: "DSAC Webiste",
+  description: "DSAC Open Source Website",
   type: "website",
   baseurl,
   url: `${host}${baseurl}`,
