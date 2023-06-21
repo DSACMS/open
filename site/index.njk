@@ -2,4 +2,15 @@
 layout: base
 ---
 
-<h1 class="text-bold">Home</h1>
+{{repos.repos.length}} projects
+
+<div class="ds-u-display--flex ds-u-flex-wrap--wrap">
+  {% for repo in repos.repos %}
+    <div class="ds-u-fill--gray-lightest ds-u-margin--1 ds-u-padding--1" style="flex-basis: calc(50% - 16px)">
+      <h2 class="ds-text-heading--lg">
+        <a href="/projects/{{repo.owner.login}}/{{repo.name}}">{{repo.name}}</a>
+      </h2>
+      <p class="ds-u-margin--0">{{repo.description}}</p>
+    </div>
+  {% endfor %}
+</div>

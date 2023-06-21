@@ -6,9 +6,16 @@
   </head>
   <body>
     {% include "nav.njk" %}
-    <main id="main" class="{{ mainClass or 'content' }}">
-      {{ content | safe }}
-    </main>
+    <div class="ds-base">
+      <header class="ds-base--inverse ds-u-padding-y--3">
+        <div class="ds-l-container">
+          <a class="ds-h3 ds-u-text-decoration--none" href="/">Open Source at CMS</a>
+        </div>
+      </header>
+      <main id="main" class="{{ mainClass or 'content' }} ds-l-container">
+        {{ content | safe }}
+      </main>
+    </div>
     {% include "footer.njk" %}
   </body>
 </html>
