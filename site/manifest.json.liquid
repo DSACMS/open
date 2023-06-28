@@ -16,7 +16,7 @@ eleventyExcludeFromCollections: true
       "sizes": "{{ size }}",
       "src": "{{ site.baseurl }}{% resizeImage './src/img/icon.png', size %}",
       "type": "image/png"
-    }{%- if not loop.last -%},{%- endif -%}
+    }{%- if not forloop.last -%},{%- endif -%}
     {% endfor %}
   ],
   "theme_color": "#b3ddf2",

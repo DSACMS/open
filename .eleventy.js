@@ -1,6 +1,7 @@
 const fs = require("fs")
 const path = require("path")
 const Image = require("@11ty/eleventy-img")
+const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite")
 
 async function resizeImage(src, sizes, outputFormat = "png") {
   const stats = await Image(src, {
@@ -67,6 +68,7 @@ module.exports = function (eleventyConfig) {
     }
   )
   eleventyConfig.addNunjucksAsyncShortcode("resizeImage", resizeImage)
+  eleventyConfig.addLiquidShortcode("resizeImage", resizeImage)
   eleventyConfig.addFilter("resizeImage", resizeImage)
 
   // Used to avoid nunjucks escaping includes of imported CSS
@@ -79,6 +81,17 @@ module.exports = function (eleventyConfig) {
     )
   })
 
+  // format a URL for concise user display, e.g. https://www.example.gov/foo/
+  // becomes example.gov/foo. The returned URL *should* be equivalent, but it
+  // might not be for broken sites (and won't be HTTPS in any case); don't use
+  // the output of this function as the href, only for user display.
+  eleventyConfig.addFilter("prettifyUrl", (url) => {
+    url = url.replace(/^https?:\/\//, "")
+    url = url.replace(/^www\./, "")
+    url = url.replace(/\/$/, "")
+    return url
+  })
+
   // Create a collection of items without permalinks so that we can reference them
   // in a separate shortcode to pull in partial content directly
   eleventyConfig.addCollection("partials", (collectionApi) =>
@@ -86,13 +99,15 @@ module.exports = function (eleventyConfig) {
   )
 
   eleventyConfig.addPassthroughCopy({
-    "src/img": "img",
-    "site/img": "img",
-    "node_modules/@uswds/uswds/dist/img": "img",
-    "site/_includes/css": "css",
-    "node_modules/@uswds/uswds/dist/fonts": "fonts",
-    "site/_includes/js": "js",
+    "src/img": "assets/img",
+    "site/img": "assets/img",
+    "src/js": "assets/js",
+    "node_modules/@uswds/uswds/dist/img": "assets/img",
   })
+
+  eleventyConfig.setLiquidOptions({ outputEscape: "escape" })
+
+  eleventyConfig.addPlugin(EleventyVitePlugin)
 
   return {
     dir: {
@@ -101,7 +116,7 @@ module.exports = function (eleventyConfig) {
       includes: "_includes",
       layouts: "_layouts",
     },
-    templateFormats: ["html", "md", "njk", "11ty.js"],
+    templateFormats: ["html", "md", "liquid", "11ty.js"],
     htmlTemplateEngine: "njk",
     passthroughFileCopy: true,
   }

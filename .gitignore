@@ -12,3 +12,4 @@ src/uswds-img/*
 !src/uswds-img/.keep
 src/fonts/*
 !src/fonts/.keep
+.cache

@@ -1,0 +1,57 @@
+---
+layout: base
+---
+<div class="grid-container">
+  {{ repos.repos.length }} projects
+  <ul class="usa-card-group">
+    {% for repo in repos.repos %}
+      <li class="usa-card tablet:grid-col-6">
+        <div class="usa-card__container">
+          <div class="usa-card__header">
+            <h2 class="usa-card__heading">
+              <a href="/projects/{{repo.owner.login}}/{{repo.name}}" class="text-no-underline">{{ repo.name }}</a>
+              {% if repo.category %}
+                <span class="usa-tag bg-{{repo.categoryColor}} usa-tag--big">{{ repo.categoryName }}</span>
+              {% endif %}
+            </h2>
+          </div>
+          <div class="usa-card__body">
+            <div>{{ repo.description }}</div>
+          </div>
+          <div class="usa-card__footer">
+            <div class="cmsopen-repo-link">
+              <svg class="usa-icon" aria-labelledby="github-{{repo.owner.login}}-{{repo.name}}-title" role="img">
+                <title id="github-{{repo.owner.login}}-{{repo.name}}-title">GitHub</title>
+                <use xlink:href="/assets/img/sprite.svg#github"></use>
+              </svg>
+              <span>
+                <a class="text-no-underline" href="https://github.com/{{repo.owner.login}}/{{repo.name}}">
+                  {{ repo.owner.login }}/{{ repo.name }}
+                </a>
+                {% if repo.otherRepos %}
+                  (+
+                  <a class="text-no-underline" href="/projects/{{repo.owner.login}}/{{repo.name}}">
+                    {{ repo.otherRepos | size }} more</a
+                  >)
+                {% endif %}
+              </span>
+            </div>
+            {% if repo.homepageUrl and repo.homepageUrl != '' %}
+              <div class="cmsopen-repo-link">
+                <svg class="usa-icon" aria-labelledby="website-{{repo.owner.login}}-{{repo.name}}-title" role="img">
+                  <title id="website-{{repo.owner.login}}-{{repo.name}}-title">Website</title>
+                  <use xlink:href="/assets/img/sprite.svg#language"></use>
+                </svg>
+                <span>
+                  <a class="text-no-underline" href="{{repo.homepageUrl}}">
+                    {{ repo.homepageUrl | prettifyUrl }}
+                  </a>
+                </span>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

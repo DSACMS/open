@@ -6,8 +6,8 @@ const host = production ? process.env.SITE_HOST : "http://0.0.0.0:8080"
 const baseurl = production ? "" : ""
 
 module.exports = {
-  name: "Digital Service at CMS",
-  title: "Digital Service at CMS",
+  name: "Open Source at CMS",
+  title: "Open Source at CMS",
   description: "DSAC Open Source Website",
   type: "website",
   baseurl,

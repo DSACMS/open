@@ -1,0 +1,32 @@
+---
+pagination:
+    data: repos.repos
+    size: 1
+    alias: repo
+permalink: "projects/{{ repo.owner.login }}/{{ repo.name }}/"
+layout: base
+---
+<div class="grid-container">
+  <h1>{{ repo.name }}</h1>
+  <p>{{ repo.description }}</p>
+
+  <p>
+    GitHub: <a href="https://github.com/{{repo.owner.login}}/{{repo.name}}">{{ repo.owner.login }}/{{ repo.name }}</a>
+    {% # fun fact: github homepageUrls can be both null and "" %}
+    {% if repo.homepageUrl and repo.homepageUrl != '' %}
+      <br>
+      Website: <a href="{{repo.homepageUrl}}">{{ repo.homepageUrl }}</a>
+    {% endif %}
+  </p>
+
+  {% if repo.otherRepos %}
+    <p>Related repositories:</p>
+    <ul>
+      {% for o in repo.otherRepos %}
+        <li>
+          <a href="https://github.com/{{o}}">{{ o }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
