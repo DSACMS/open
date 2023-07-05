@@ -69,16 +69,22 @@ let orgs = [
   "Enterprise-CMCS",
   "MeasureAuthoringTool",
   "MITA-Governance-Board",
+  "projectcypress",
+  "projecttacoma",
 ]
 
 const categories = {
   apis: { name: "APIs", color: "red" },
   apps: { name: "Apps", color: "blue" },
   data: { name: "Data", color: "orange" },
+  docs: { name: "Docs", color: "mint" },
   libraries: { name: "Libraries", color: "magenta" },
   standards: { name: "Standards", color: "gold" },
+  // Rough distinction: an app is primarily targeted at end users, while a tool
+  // is targeted at technical users. If it has no GUI, it's almost certainly a
+  // tool, but beyond that it gets a little fuzzy. Some things could go both
+  // ways.
   tools: { name: "Tools", color: "green" },
-  docs: { name: "Docs", color: "mint" },
 }
 
 const manualOverrides = {
@@ -181,6 +187,73 @@ const manualOverrides = {
   "CMSgov/ars-machine-readable": { category: "data" },
   "Enterprise-CMCS/cmcs-eregulations": { category: "apps" },
   "Enterprise-CMCS/macpro-ux-lib": { category: "libraries" },
+  "MeasureAuthoringTool/madie-root": {
+    description:
+      "The Measure Authoring Development Integrated Environment (MADiE) allows users to develop and test measures in an integrated workspace.",
+    category: "apps",
+  },
+  "MeasureAuthoringTool/madie-patient": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/madie-rest-commons": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/madie-fhir-service": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/madie-cypress": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/madie-measure": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/madie-java-models": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/madie-cql-library": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/madie-editor": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/madie-auth": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/madie-layout": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/madie-components": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/madie-models": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/madie-util": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/madie-public": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/madie-frontend-template": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/madie-server-commons": {
+    mergeInto: "MeasureAuthoringTool/madie-root",
+  },
+  "MeasureAuthoringTool/MeasureAuthoringTool": {
+    category: "apps",
+    description:
+      "The Measure Authoring Tool (MAT) is a web-based tool that allows measure developers to author electronic Clinical Quality Measures (eCQMs).",
+    homepageUrl: "https://www.emeasuretool.cms.gov",
+  },
+  "MeasureAuthoringTool/bonnie": {
+    category: "apps",
+    description:
+      "Bonnie is a software tool that allows electronic clinical quality measure (eCQM) developers to test and verify the behavior of their eCQM logic.",
+  },
+  "projectcypress/cypress": {
+    category: "tools"
+  }
 }
 
 module.exports = async () => {
