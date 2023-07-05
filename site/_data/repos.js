@@ -62,7 +62,14 @@ async function reposForOrg(org) {
   return JSON.parse(JSON.stringify(repos))
 }
 
-let orgs = ["CMSGov", "CMS-Enterprise", "DSACMS", "Enterprise-CMCS"]
+let orgs = [
+  "CMSGov",
+  "CMS-Enterprise",
+  "DSACMS",
+  "Enterprise-CMCS",
+  "MeasureAuthoringTool",
+  "MITA-Governance-Board",
+]
 
 const categories = {
   apis: { name: "APIs", color: "red" },
