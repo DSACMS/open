@@ -2,6 +2,7 @@ const fs = require("fs")
 const path = require("path")
 const Image = require("@11ty/eleventy-img")
 const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite")
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy")
 
 async function resizeImage(src, sizes, outputFormat = "png") {
   const stats = await Image(src, {
@@ -107,7 +108,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setLiquidOptions({ outputEscape: "escape" })
 
-  eleventyConfig.addPlugin(EleventyVitePlugin)
+  const pathPrefix = process.env.NODE_ENV == "production" ? "/open" : "/"
+
+  eleventyConfig.addPlugin(EleventyVitePlugin, {
+    viteOptions: { base: pathPrefix },
+  })
 
   return {
     dir: {
@@ -119,5 +124,6 @@ module.exports = function (eleventyConfig) {
     templateFormats: ["html", "md", "liquid", "11ty.js"],
     htmlTemplateEngine: "njk",
     passthroughFileCopy: true,
+    pathPrefix,
   }
 }

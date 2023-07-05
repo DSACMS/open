@@ -15,10 +15,15 @@
       </button>
       <ul class="usa-nav__primary usa-accordion">
         <li class="usa-nav__primary-item">
-          <a href="/" class="usa-nav-link {% if page.url == "/" %}usa-current{% endif %}"><span>Home</span></a>
+          <a href="{{ "/" | url}}" class="usa-nav-link {% if page.url == "/" %}usa-current{% endif %}">
+            <span>Home</span>
+          </a>
         </li>
         <li class="usa-nav__primary-item">
-          <a href="/projects/" class="usa-nav-link {% if page.url contains "/projects/" %}usa-current{% endif %}">
+          <a
+            href="{{ "/projects/" | url}}"
+            class="usa-nav-link {% if page.url contains "/projects/" %}usa-current{% endif %}"
+          >
             <span>Projects</span>
           </a>
         </li>

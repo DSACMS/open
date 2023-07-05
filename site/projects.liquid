@@ -9,7 +9,7 @@ layout: base
         <div class="usa-card__container">
           <div class="usa-card__header">
             <h2 class="usa-card__heading">
-              <a href="/projects/{{repo.owner.login}}/{{repo.name}}/" class="text-no-underline">{{ repo.name }}</a>
+              <a href="{{repo.owner.login}}/{{repo.name}}/" class="text-no-underline">{{ repo.name }}</a>
               {% if repo.category %}
                 <span class="usa-tag bg-{{repo.categoryColor}} usa-tag--big">{{ repo.categoryName }}</span>
               {% endif %}
@@ -30,7 +30,7 @@ layout: base
                 </a>
                 {% if repo.otherRepos %}
                   (+
-                  <a class="text-no-underline" href="/projects/{{repo.owner.login}}/{{repo.name}}/">
+                  <a class="text-no-underline" href="{{repo.owner.login}}/{{repo.name}}/">
                     {{ repo.otherRepos | size }} more</a
                   >)
                 {% endif %}
