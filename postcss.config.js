@@ -1,16 +1,16 @@
 module.exports = {
   plugins: [
-    require("postcss-import"),
     require("autoprefixer"),
     ...(process.env.NODE_ENV === "production"
       ? [
-          require("cssnano"),
           require("@fullhuman/postcss-purgecss")({
-            content: [
-              "./site/**/*.njk",
-              "./site/**/*.html",
-              "./site/**/*.md",
-              "./src/**/*.js",
+            content: ["./.11ty-vite/**/*.html"],
+            safelist: ["usa-js-loading"],
+            extractors: [
+              {
+                extractor: require("purgecss-from-html"),
+                extensions: ["html"],
+              },
             ],
           }),
         ]
