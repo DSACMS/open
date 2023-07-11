@@ -4,7 +4,7 @@ module.exports = {
     ...(process.env.NODE_ENV === "production"
       ? [
           require("@fullhuman/postcss-purgecss")({
-            content: ["./.11ty-vite/**/*.html"],
+            content: ["./.11ty-vite/**/*.html", "./.11ty-vite/**/*.js"],
             safelist: ["usa-js-loading"],
             extractors: [
               {
