@@ -33,6 +33,23 @@ async function reposForOrg(org) {
                 isArchived
                 isFork
                 isEmpty
+                licenseInfo {
+                  spdxId
+                }
+                repositoryTopics(first: 100) {
+                  nodes {
+                    topic {
+                      name
+                    }
+                  }
+                }
+                languages(first: 100) {
+                  nodes {
+                    name
+                  }
+                }
+                createdAt
+                pushedAt
               }
               pageInfo {
                 endCursor
@@ -252,8 +269,8 @@ const manualOverrides = {
       "Bonnie is a software tool that allows electronic clinical quality measure (eCQM) developers to test and verify the behavior of their eCQM logic.",
   },
   "projectcypress/cypress": {
-    category: "tools"
-  }
+    category: "tools",
+  },
 }
 
 module.exports = async () => {
