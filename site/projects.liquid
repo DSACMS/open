@@ -1,11 +1,25 @@
 ---
 layout: base
 ---
+<script type="module" src="/assets/js/projects.js"></script>
 <div class="grid-container">
-  The Centers for Medicare and Medicaid Services develops or funds many open-source projects. Here are some of them:
+  <p>
+    The Centers for Medicare and Medicaid Services develops or funds many open-source projects. Here are some of them:
+  </p>
+  <div class="margin-bottom-2">
+    <label class="usa-label" for="filter-input">Filter</label>
+    <div class="usa-input-group width-full maxw-none">
+      <div class="usa-input-prefix" aria-hidden="true">
+        <svg aria-hidden="true" role="img" focusable="false" class="usa-icon">
+          <use xlink:href="/assets/img/sprite.svg#search"></use>
+        </svg>
+      </div>
+      <input class="usa-input" id="filter-input" name="filter-input">
+    </div>
+  </div>
   <ul class="usa-card-group">
     {% for repo in repos.repos %}
-      <li class="usa-card tablet:grid-col-6">
+      <li class="usa-card project-card tablet:grid-col-6">
         <div class="usa-card__container">
           <div class="usa-card__header">
             <h2 class="usa-card__heading">
