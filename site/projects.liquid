@@ -21,7 +21,7 @@ layout: base
   <ul class="usa-card-group">
     {% for repo in repos.repos %}
       <li class="usa-card project-card tablet:grid-col-6">
-        <div class="usa-card__container">
+        <div class="usa-card__container" style="overflow-x: scroll;">
           <div class="usa-card__header">
             <h2 class="usa-card__heading">
               <a href="{{repo.owner.login}}/{{repo.name}}/" class="text-no-underline">{{ repo.name }}</a>
