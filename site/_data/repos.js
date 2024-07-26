@@ -126,12 +126,12 @@ const manualOverrides = {
       "A developer-friendly, standards-based API that enables Medicare beneficiaries to connect their claims data to applications, services and research programs they trust.",
     category: "apis",
   },
-  // "CMSgov/easi-app": {
-  //   homepageUrl: "https://easi.cms.gov",
-  //   description:
-  //     "EASi is a web application supporting the IT governance process at CMS.",
-  //   category: "apps",
-  // },
+  "CMS-Enterprise/easi-app": {
+    homepageUrl: "https://easi.cms.gov",
+    description:
+      "EASi is a web application supporting the IT governance process at CMS.",
+    category: "apps",
+  },
   "Enterprise-CMCS/macpro-quickstart-serverless": {
     description:
       "Template for a serverless form submission application, built and deployed to AWS with the Serverless Application Framework.",
