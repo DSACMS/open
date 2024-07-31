@@ -3,10 +3,7 @@ name: stale repo identifier
 on:
   workflow_dispatch:
   schedule:
-    - cron: "3 2 1 * *"
-  push:
-    branches:
-      - add-stale-repos-workflow
+    - cron: "0 0 1 * *"
 
 jobs:
   build:
