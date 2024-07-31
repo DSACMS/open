@@ -12,6 +12,7 @@ jobs:
   build:
     name: stale repo identifier
     runs-on: ubuntu-latest
+    permissions: write-all
 
     steps:
       - name: Checkout code
