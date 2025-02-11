@@ -1,39 +1,39 @@
 {
   "name": "open",
-  "description": "",
-  "longDescription": "",
-  "status": "",
+  "description": "Repo Visualizations",
+  "longDescription": "First Iteration of Metrics Visualizations Site",
+  "status": "Archival",
   "permissions": {
     "license": [
       {
-        "name": "",
-        "URL": ""
+        "name": "CC0 1.0 Universal",
+        "URL": "https://github.com/DSACMS/open/blob/main/LICENSE.md"
       }
     ],
-    "usageType": "",
+    "usageType": "openSource",
     "exemptionText": ""
   },
-  "organization": "",
+  "organization": "Centers for Medicare & Medicaid Services",
   "repositoryURL": "https://github.com/DSACMS/open",
   "vcs": "git",
   "laborHours": 3139,
-  "platforms": [],
-  "categories": [],
-  "softwareType": "",
+  "platforms": ["web"],
+  "categories": ["data-analytics", "data-collection", "data-visualization"],
+  "softwareType": "standalone/web",
   "languages": [
     "JavaScript",
     "Liquid"
   ],
-  "maintenance": "",
+  "maintenance": "internal",
   "date": {
     "created": "2023-06-06T16:35:30Z",
     "lastModified": "2025-02-11T21:18:36Z",
     "metaDataLastUpdated": "2025-02-11T21:20:46.666Z"
   },
-  "tags": [],
+  "tags": ["metrics", "ospo", "repository"],
   "contact": {
-    "email": "",
-    "name": ""
+    "email": "opensource@cms.hhs.gov",
+    "name": "CMS/OA/DSAC"
   },
   "localisation": false,
   "repositoryType": "",
@@ -43,6 +43,6 @@
   "subsetInHealthcare": "Operational",
   "userType": "Government",
   "repositoryHost": "Github.com",
-  "maturityModelTier": "2",
+  "maturityModelTier": 2,
   "projectType": "Website"
 }
