@@ -58,6 +58,6 @@
     "trailingComma": "es5"
   },
   "dependencies": {
-    "@octokit/graphql": "^6.0.0"
+    "@octokit/graphql": "^8.2.1"
   }
 }
