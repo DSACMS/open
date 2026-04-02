@@ -3,7 +3,7 @@
 > This project is now archived and no longer actively maintained. It has been archived to retain its contents for reference. Feel free to explore and fork the repository, but please note that updates or support will not be provided.
 
 > [!IMPORTANT]
-> The [CMS OSPO Metrics Website](dsacms.github.io/metrics) is an alternate project that is actively maintained, containing similar functionality and information. Visit the repository at www.github.com/DSACMS/metrics
+> The [CMS OSPO Metrics Website](https://dsacms.github.io/metrics/) is an alternate project that is actively maintained, containing similar functionality and information. Visit the repository at www.github.com/DSACMS/metrics
 
 A static webpage containing various information about CMS open source repositories. This is originally the first iteration of metrics visualizations site.
 
