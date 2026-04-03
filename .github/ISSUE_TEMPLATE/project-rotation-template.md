@@ -10,7 +10,7 @@ assignees: ''
 ## MENTOR
 - @YOUR_GITHUB_USERNAME_HERE
 - Your Title, Team, Project
-- Commnication Channel(s) for your team/project (e.g. Slack Channel URL, GitHub Repo URL, etc...)
+- Communication Channel(s) for your team/project (e.g. Slack Channel URL, GitHub Repo URL, etc...)
 
 ## BRIEF DESCRIPTION
 This section should contain a *clearly defined result* to be achieved by the end of the sprint, such as:
